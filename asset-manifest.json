@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pet-paw/static/css/main.2c8d4470.css",
-    "main.js": "/pet-paw/static/js/main.fa3fbf8f.js",
+    "main.js": "/pet-paw/static/js/main.edf70f4b.js",
     "static/js/505.123e7f40.chunk.js": "/pet-paw/static/js/505.123e7f40.chunk.js",
     "static/js/913.e5690f8f.chunk.js": "/pet-paw/static/js/913.e5690f8f.chunk.js",
     "static/js/654.1f408ec9.chunk.js": "/pet-paw/static/js/654.1f408ec9.chunk.js",
@@ -9,7 +9,7 @@
     "static/js/787.0c3f432a.chunk.js": "/pet-paw/static/js/787.0c3f432a.chunk.js",
     "static/js/181.d0ba8ab0.chunk.js": "/pet-paw/static/js/181.d0ba8ab0.chunk.js",
     "static/js/605.7f2e2e54.chunk.js": "/pet-paw/static/js/605.7f2e2e54.chunk.js",
-    "static/js/250.b146865f.chunk.js": "/pet-paw/static/js/250.b146865f.chunk.js",
+    "static/js/250.e8a8c515.chunk.js": "/pet-paw/static/js/250.e8a8c515.chunk.js",
     "static/media/girl-and-pet 1.png": "/pet-paw/static/media/girl-and-pet 1.8a8ef0d2a5fab7f60f72.png",
     "static/media/images-search.png": "/pet-paw/static/media/images-search.84d2a57c6cccbe29c184.png",
     "static/media/vote-table.png": "/pet-paw/static/media/vote-table.e6f99ca0db4420b380aa.png",
@@ -18,7 +18,7 @@
     "static/media/Logo.svg": "/pet-paw/static/media/Logo.0ab0a49fb5fb9c8bd88093fb4386d8fc.svg",
     "index.html": "/pet-paw/index.html",
     "main.2c8d4470.css.map": "/pet-paw/static/css/main.2c8d4470.css.map",
-    "main.fa3fbf8f.js.map": "/pet-paw/static/js/main.fa3fbf8f.js.map",
+    "main.edf70f4b.js.map": "/pet-paw/static/js/main.edf70f4b.js.map",
     "505.123e7f40.chunk.js.map": "/pet-paw/static/js/505.123e7f40.chunk.js.map",
     "913.e5690f8f.chunk.js.map": "/pet-paw/static/js/913.e5690f8f.chunk.js.map",
     "654.1f408ec9.chunk.js.map": "/pet-paw/static/js/654.1f408ec9.chunk.js.map",
@@ -26,10 +26,10 @@
     "787.0c3f432a.chunk.js.map": "/pet-paw/static/js/787.0c3f432a.chunk.js.map",
     "181.d0ba8ab0.chunk.js.map": "/pet-paw/static/js/181.d0ba8ab0.chunk.js.map",
     "605.7f2e2e54.chunk.js.map": "/pet-paw/static/js/605.7f2e2e54.chunk.js.map",
-    "250.b146865f.chunk.js.map": "/pet-paw/static/js/250.b146865f.chunk.js.map"
+    "250.e8a8c515.chunk.js.map": "/pet-paw/static/js/250.e8a8c515.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2c8d4470.css",
-    "static/js/main.fa3fbf8f.js"
+    "static/js/main.edf70f4b.js"
   ]
 }
