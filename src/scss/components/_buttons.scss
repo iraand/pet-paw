@@ -1,0 +1,225 @@
+.button{
+    height: 40px;
+    width:122px;
+    border-radius: 10px;
+    border: none;
+    color: $subtitleColor;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    line-height: 16px;
+    opacity:1;
+    cursor: pointer;
+    transition-duration:300ms;
+    background-color: $lightGray;
+
+    .arrow{
+      width:7px;
+      height:12px;
+      fill:$subtitleColor;
+      display: inline-flex;   
+    }
+    .arrow--left{
+      margin-right:15px;  
+    }  
+    .arrow--right{
+      transform: scale(-1, -1);
+      margin-left:13px;  
+    }
+    &[disabled]{
+      opacity:0.5;
+      cursor: default;
+    }
+    &:hover{
+      background-color: $secondaryColor;
+      color: $primaryColor;
+      transition-duration:300ms;
+      
+      & .arrow{
+        fill:$primaryColor;
+      }   
+      
+      &[disabled]{
+        background-color: $lightGray; 
+        color: $subtitleColor;
+        
+        & .arrow{
+          fill:$subtitleColor;
+        }
+      }  
+    }
+    &:active, &:focus{
+      background-color: $primaryColor;
+      color:white;
+      & .arrow{
+        fill:white;
+      }
+    }
+}
+.button--prev{
+  margin-right: 20px!important;
+}
+.button--next{
+  margin-left: 20px!important;
+}
+
+.button-back{
+  height:40px;
+  min-width:40px;
+  background-color: $secondaryColor;
+  margin-right:10px;  
+  width:40px;
+
+  .arrow-back{
+    width: 12px !important;
+    height: 20px !important; 
+    fill: $primaryColor !important;
+  }
+
+  &:hover{
+    background-color: $primaryColor; 
+  }
+  
+  &:hover .arrow-back,
+  &:focus .arrow-back{
+    fill: white !important;
+  }
+}
+.button-sort{
+  margin-left:10px; 
+  height:40px;
+  min-width:40px;
+  width:40px;
+  background-color: $lightGray !important;
+  border: 2px solid transparent!important; 
+
+  .icon-sort{
+    width: 19px;
+    height: 22px; 
+    fill:$subtitleColor;
+  }
+
+  &:hover{
+    border: 2px solid $secondaryColor!important; 
+  }
+
+  &:hover .icon-sort{
+    fill: $primaryColor!important;
+  }
+
+}
+.button__tiltle{
+  color: $primaryColor;
+  width:180px;
+  padding:15px;
+  bottom:10px;
+  left: calc(50% - 90px);
+  position: absolute;
+  
+  &:hover{
+    background-color: $primaryColor;
+    color: white;  
+  }  
+}
+.button-group{
+  display: flex;
+  justify-content: center;
+  margin-top:15px;
+  
+}
+.search-button{
+  top:10px;
+  right:10px;
+  position: absolute;
+  width:40px;
+  height:40px;
+  border-radius: 10px;
+  background:$secondaryColor;
+  border: none;
+  cursor: pointer;
+
+  .search-icon{
+    fill:$primaryColor;
+  }
+
+  &:hover{
+    background:$primaryColor;
+
+    & .search-icon{
+      fill:white;
+    }
+  }
+}
+
+
+.button-upload{
+  width:144px;
+  height:40px;
+  background:$secondaryColor;
+  color:$primaryColor;
+
+  .icon-upload{
+    width:16px;
+    height:16px;
+    fill:$primaryColor;
+    margin-right: 11px;
+  }
+
+  &:hover{
+    background:$primaryColor;
+    color: white;
+
+    & .icon-upload{
+      fill:white;
+    }
+  }  
+}
+
+.button-reload{
+  background:white;
+  width: 40px;
+  height: 40px;
+
+  .icon-reload{
+    width:18px;
+    height:20px;
+    fill:$primaryColor;
+  }
+
+  &:hover{
+    background:$primaryColor;
+    fill: white !important;
+  }
+
+  &:hover .icon-reload,
+  &:focus .icon-reload{
+    fill: white !important;
+  }
+
+  &[disabled]{
+    background-color: white;
+    pointer-events: none;
+    fill:$primaryColor;
+  }
+}
+
+.button__love{
+  width:40px;
+  height:40px;
+  fill:$primaryColor;
+  background-color: white;
+  
+  .icon-love{
+    width:20px;
+    height:17px;
+  }
+
+  &:hover{
+    background-color: $primaryColor;
+    fill:white;
+  }
+}

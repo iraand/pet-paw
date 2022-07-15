@@ -1,0 +1,45 @@
+
+.header{
+    width:100%;
+    height:100%;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+form{
+    height:60px;
+    width:80%;
+    position: relative;
+}
+.smiles{
+    width:20%;
+    height:100%;
+    min-width:210px;
+    display: flex;
+    justify-content: flex-end;
+}
+.smile-button{
+    width:60px;
+    height:60px;
+    margin-left:10px;
+    border-radius: 20px;
+    background: #FFFFFF;
+    fill:$primaryColor;
+    border: none;
+    cursor: pointer;
+
+    .smile-dislike,
+    .smile-like{
+        width:30px;
+        height:30px;
+    }
+    .smile-love{
+        width:30px;
+        height:26px;
+    }
+
+    &:hover{
+        background:$primaryColor;
+        fill:white;
+    }
+}

@@ -1,0 +1,105 @@
+.slider{
+    position: relative;
+    margin-top:20px;
+}
+.slider p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px; 
+    color: $subtitleColor;
+
+    .bold{
+        font-weight: 500; 
+        color:$mainTextColor;
+    }
+}
+.rsis-container {
+  width: 100%!important;
+  border-radius: 20px;
+  overflow: hidden;
+}
+// .rsis-image{
+//     background-position: center center!important;
+//     position: static!important;
+// }
+.breed-id{
+    position: absolute;
+    top:-59px;
+    left:205px;
+    color:white;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px; 
+    background-color: $primaryColor;
+    padding-left:10px;
+    padding-right:10px; 
+    height: 40px; 
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider div div div button{
+    box-shadow:none!important;
+    // background:$secondaryColor!important;
+    // border: none !important;
+}
+
+// .slider div div div button:focus,
+// .slider div div div button:active,
+// .slider div div div button:hover
+// {
+//     background:$primaryColor!important;  
+// }
+.active-bullet{
+    background:$primaryColor!important;  
+}
+
+.breed-text{
+    border: 2px solid #FBE0DC;
+    border-radius: 20px;
+    margin-top: 50px;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 52px;
+    font-family: 'Jost';
+    color: #1D1D1D;
+}
+.breed-name{
+    text-align: center;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 52px;
+    font-family: 'Jost';
+    color: #1D1D1D;   
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    width:193px;
+    margin: 0 auto;
+    margin-top: -30px;
+}
+.breed-description{
+    padding: 15px 40px;
+}
+.breed-info{
+    padding: 5px 40px 40px;
+    display: flex;
+    justify-content: center;
+}
+.breed-temperament{
+    width:35%;
+    margin:0 20px;
+}
+.breed-span{
+    width:35%;
+    margin:0 20px;
+}
+
+@media screen and (max-width: 1024px) {
+    .breed-span,
+    .breed-temperament{
+        width:50%;
+    }
+
+}

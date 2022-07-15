@@ -1,0 +1,38 @@
+.home-page__content{
+    height:100%;
+    width: 55%;
+    min-height:calc(100vh - 40px);
+    padding: 20px;
+    position: relative;
+}
+.home-page__container{
+    background-color: $secondaryColor;
+    height: 94%;
+    width:94%;
+    margin: 3%;
+    border-radius: 20px;
+    min-height:calc(92vh);  
+}
+.home-page__bg{
+    background-image: url('../../images/girl-and-pet 1.png'); 
+    background-repeat: no-repeat;
+    background-position: top right;
+    height: 100%;
+    width:100%;
+    background-size: 100%;   
+    position: absolute;
+    right:0;
+    top:0;
+}
+
+@media screen and (max-width: 1290px) {
+    .home-page{
+        width:50%;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .home-page{
+        width:100%;
+    }
+  }

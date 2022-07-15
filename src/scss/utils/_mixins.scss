@@ -1,0 +1,10 @@
+@mixin backgroundColor($color) {
+  background-color: $color;
+}
+
+@mixin wrapped($jc) {
+    width:100%;
+    height:100%;
+    justify-content: $jc;
+    display: flex;
+  }

@@ -1,0 +1,68 @@
+@import 'utils/colors';
+@import 'utils/mixins';
+
+@import 'components/home';
+@import 'components/navbar';
+@import 'components/breeds';
+@import 'components/buttons';
+@import 'components/select';
+@import 'components/header';
+@import 'components/slider';
+@import 'components/gallery';
+@import 'components/voting';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  list-style: none;   
+}
+
+
+body{
+    background: $backgroundColor;
+}
+.container{
+  display:flex;
+  width:100%;
+  height: 100%; 
+  max-width:2000px;
+  margin: 0 auto;
+}
+.loader{
+  position: absolute;
+  top:calc(50vh - 75px);
+  left: calc(50% - 75px);
+}
+
+.title-page{
+  padding: 0 !important;
+  margin: 0 !important;
+  min-width:143px;
+  height:40px;
+  background-color: $primaryColor;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5px;
+  margin-right: 10px!important;
+}
+.title-page__notactive{
+  background-color: $secondaryColor;
+  color:$primaryColor;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .container{
+      flex-direction: column;
+      height:100%;
+    }
+  }
