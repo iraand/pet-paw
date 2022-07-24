@@ -21,7 +21,7 @@ export const Navbar = (props) => {
           };
     
     
-    },[q]);
+    },[]);
 
     return (
         <div className={`navbar ${props.className}`} ref={el}>
