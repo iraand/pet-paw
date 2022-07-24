@@ -11,7 +11,7 @@ import { ButtonGoBack } from "../components/ButtonGoBack";
 export default function Breed() {
     let { id } = useParams();
 
-    document.title = `PatsPaw - Breed - ${id}`;
+    document.title = `PatsPaw - Breeds - ${id}`;
     const [breedsImages, setBreedsImages] = useState(null);
     const [loading, setLoading] = useState(true);
     const [opacity, setOpacity] = useState(1);
@@ -31,8 +31,6 @@ export default function Breed() {
             let response = await fetchData(query_params);                        
                   
             let images = response.response_data;
-            
-            console.log(images);   
 
             setBreedsImages(images);    
             setLoading(false);
@@ -48,13 +46,12 @@ export default function Breed() {
 
     }, [])
                                                   
-    return (
-        <>           
+    return (    
         <div className="content"> 
             <Header />
             <div className="breeds__container">  
                 <div className="breeds__select-section">  
-                    <ButtonGoBack navigate={"/breeds/"} />                     
+                    <ButtonGoBack navigate={-1} />                     
                     <h1 className="title-page title-page__notactive">BREEDS</h1>
                 </div> 
                 
@@ -69,6 +66,5 @@ export default function Breed() {
                 {loading && <CircleLoader speedMultiplier={1} color={"#FF868E"} size={150} className="loader"/>}
             </div>
         </div>         
-        </>
     )
 } 

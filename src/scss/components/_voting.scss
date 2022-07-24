@@ -6,8 +6,8 @@
     height: 50vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height:360px;
+    align-items: flex-start;
+    min-height:166px;
 
     .image{
         width:100%;
@@ -119,4 +119,14 @@
         position: absolute;
         right:22px;
     }  
+}
+@media screen and (max-width: 720px) {
+    .image_container{
+        height:100%;
+    }
+    .vote-conteiner{
+        flex-direction: column;
+        justify-content: left;
+        align-items: flex-start;
+    }
 }

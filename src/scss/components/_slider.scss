@@ -18,10 +18,7 @@
   border-radius: 20px;
   overflow: hidden;
 }
-// .rsis-image{
-//     background-position: center center!important;
-//     position: static!important;
-// }
+
 .breed-id{
     position: absolute;
     top:-59px;
@@ -41,20 +38,7 @@
 }
 .slider div div div button{
     box-shadow:none!important;
-    // background:$secondaryColor!important;
-    // border: none !important;
 }
-
-// .slider div div div button:focus,
-// .slider div div div button:active,
-// .slider div div div button:hover
-// {
-//     background:$primaryColor!important;  
-// }
-.active-bullet{
-    background:$primaryColor!important;  
-}
-
 .breed-text{
     border: 2px solid #FBE0DC;
     border-radius: 20px;
@@ -73,8 +57,7 @@
     font-family: 'Jost';
     color: #1D1D1D;   
     background-color: white;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px 0 20px;
     width:193px;
     margin: 0 auto;
     margin-top: -30px;
@@ -100,6 +83,35 @@
     .breed-span,
     .breed-temperament{
         width:50%;
+    }
+
+}
+
+@media screen and (max-width: 720px) {
+    .breed-info{
+        padding: 20px;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+    .breed-name{
+        font-size: 20px;
+        padding: 0 5px 0 5px;  
+        width:193px;     
+    }
+    .breed-description{
+        padding: 0px 20px;
+    }
+    .breed-temperament{
+        width:100%;
+        margin: 0;
+    }
+    .breed-span{
+        width:100%;
+        margin: 0;
+    }
+    p{
+        margin: 10px 0; 
     }
 
 }

@@ -1,12 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import axios from "axios";
 import Select from 'react-select'; 
 
+// import axios from "axios";
 
 export const SelectBreeds = (props) => {   
-
     const [breedsOptions, setBreedsOptions] = useState([{ value: 'All breeds', label: 'All breeds' }]);
-
+    
     const handleChange = (e) => {
         return props.onChange(e);
     }
@@ -14,14 +13,12 @@ export const SelectBreeds = (props) => {
         async function getOptions(){
             // axios.defaults.headers.common['x-api-key'] = "531a21b2-f437-4298-809c-b7c57253fac4"   
             // let response = await axios.get('https://api.thecatapi.com/v1/breeds') 
-            let savedBreeds = await JSON.parse(localStorage.getItem('breeds'));
+            const savedBreeds = await JSON.parse(localStorage.getItem('breeds'));
             
             const options = savedBreeds.map( item => ({ value: item.id, label: item.name }));
-            
-            // const options = response.data.map( item => ({ value: item.id, label: item.name }));
             setBreedsOptions( (breedsOptions) => [...breedsOptions, ...options]); 
         }
-        
+               
         getOptions();
 
     },[])

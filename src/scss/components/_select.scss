@@ -149,9 +149,7 @@
     font-size: 20px;
     width:100%;
 }
-.search-breeds .react-select__indicator{
-  
-}
+
 .search-breeds .react-select__input-container,
 .search-breeds .react-select__placeholder,
 .search-breeds .react-select__input-container,
@@ -182,4 +180,29 @@
 .react-select__value-container
 {
     width:100%!important;
+}
+
+
+@media screen and (max-width: 720px) {
+    .breeds__breeds-select{
+        margin: 0;
+    }
+    .breeds__limit{
+        width:66%;  
+        margin: 0;
+        margin-top: 10px;
+    
+        .react-select__control{
+            background: $lightGray!important;  
+            width:100%;      
+        }
+        .react-select__single-value{
+            color:$subtitleColor!important;
+        }
+        .react-select__menu{
+            width:100%!important;
+        
+        }
+    }
+
 }

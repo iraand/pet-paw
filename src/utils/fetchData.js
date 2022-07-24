@@ -1,4 +1,5 @@
 import axios from "axios";
+axios.defaults.headers.common['x-api-key'] = "531a21b2-f437-4298-809c-b7c57253fac4"   
 
 async function fetchData (query_params) {
 
@@ -11,9 +12,7 @@ async function fetchData (query_params) {
             page: page-1,
             order: order,
             mime_types: type
-        }
-
-        axios.defaults.headers.common['x-api-key'] = "531a21b2-f437-4298-809c-b7c57253fac4"   
+        }        
 
         let response = await axios.get(`https://api.thecatapi.com/v1/${uri}`, { params: query_params } ) 
 

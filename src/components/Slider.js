@@ -5,6 +5,10 @@ export const Slider = (props) => {
     const [images, setImages] = useState(null);
     const [breed, setBreed] = useState(null);
     const [breedId, setBreedId] = useState('');
+    let height = '550px';
+    const width = window.innerWidth;
+    width < 720 ? height = '250px' :  width > 720 && width < 1024 ? height = '400px' : height = '550px';
+    
 
     useEffect(() => {
 
@@ -19,7 +23,7 @@ export const Slider = (props) => {
         <div className='breed-id'>{breedId}</div>
         {images && <SimpleImageSlider
             width={'100%'}
-            height={550}
+            height={height}
             bgColor={'#fff'}
             images={images}
             showBullets={true}
@@ -38,7 +42,7 @@ export const Slider = (props) => {
         {breed && <div className='breed-text'>
             <h1 className='breed-name'>{breed.name}</h1>
             <p className='breed-description'>{breed.description}</p>
-            <div class='breed-info'>
+            <div className='breed-info'>
                 <p className='breed-temperament'><span className='bold'>Temperament:</span> {breed.temperament}</p>
                 <div className='breed-span'>
                     <p><span className='bold'>Origin:</span> {breed.origin}</p>

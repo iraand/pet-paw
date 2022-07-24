@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import { useNavigate } from 'react-router-dom';
 import CircleLoader from "react-spinners/ClipLoader";
 
@@ -19,11 +20,12 @@ export default function Breeds() {
     const [breedsImages, setBreedsImages] = useState(null);
     const [limit, setLimit] = useState(10);
     const [page, setPage] = useState(1);
-    const [pages, setPages] = useState(100);
+    const [pages, setPages] = useState(0);
     const [loading, setLoading] = useState(true);
     const [opacity, setOpacity] = useState(1);
     const [shellDisableNext, setShellDisableNext] = useState(false);
-    const [shellDisablePrev, setShellDisablePrev] = useState(true);       
+    const [shellDisablePrev, setShellDisablePrev] = useState(true);  
+    const [order, setOrder] = useState('Asc');     
     let isCancelled = false;
 
     useEffect(()=> {
@@ -32,7 +34,7 @@ export default function Breeds() {
             let query_params = {
                 limit: limit,               
                 page: page,
-                order: 'Desc',
+                order: order,
                 uri: 'breeds'              
             };
             let response;
@@ -58,24 +60,25 @@ export default function Breeds() {
             setLoading(false);
             setOpacity(1);
             setPages(getNumPages);  
-            setShellDisableNext(page === pages); 
+            setShellDisableNext(page === pages || pagination_count < limit); 
             setShellDisablePrev(page === 1); 
-
+         
         }
+
         if (!isCancelled) {
             getImages();
         }
         return () => {
             isCancelled = true;
-          };
+        };
 
-    }, [page, limit])
+    }, [page, limit, order])
 
 
     const handleChange = (e) => {
         setLoading(true);
         setOpacity(0.5);
-        navigate(`/breed/${e.value}`, { replace: true });         
+        navigate(`/breeds/${e.value}`);         
     }
 
     const prevPage = async (e) => {
@@ -95,12 +98,11 @@ export default function Breeds() {
         }                    
     };
                                                    
-    return (
-        <>           
+    return (          
         <div className="content"> 
             <Header />
             <div className="breeds__container">  
-                <div className="breeds__select-section">  
+                <div className="breeds__select-section"> 
                     <ButtonGoBack navigate={-1} />                     
                     <h1 className="title-page">BREEDS</h1>
                     <div className="wrapper">
@@ -110,16 +112,16 @@ export default function Breeds() {
                             className="breeds__breeds-select"
                         />                   
                         <Limit onChange={val => setLimit(val)} className="breeds__limit"/>
-                        <button type="button" aria-label="sort" className="button button-sort">
-                                <svg className="icon-sort" viewBox="0 0 19 22">
-                                    <use width="19" height="22" href={`${Icons}#sortAB`}></use>
+                        <button type="button" aria-label="sort" className="button button-sort" onClick={() => {setOrder('Asc')}}>
+                            <svg className="icon-sort" viewBox="0 0 19 22">
+                                <use width="19" height="22" href={`${Icons}#sortAB`}></use>
+                            </svg>
+                        </button> 
+                        <button type="button" aria-label="sort" className="button button-sort" onClick={() => {setOrder('Desc')}}>
+                            <svg className="icon-sort" viewBox="0 0 19 22">
+                                <use width="19" height="22" href={`${Icons}#sortBA`}></use>
                                 </svg>
-                            </button> 
-                            <button type="button" aria-label="sort" className="button button-sort">
-                                <svg className="icon-sort" viewBox="0 0 19 22">
-                                    <use width="19" height="22" href={`${Icons}#sortBA`}></use>
-                                </svg>
-                            </button>
+                        </button>
                     </div>
                 </div> 
                 
@@ -132,17 +134,17 @@ export default function Breeds() {
                         let container = [];
 
                         for(let i=0; i<numContainers; i++){
-                            container.push(<div key={page+i} className="images__container" style={{opacity: opacity}}>
+                            container.push(<div key={i} className="images__container" style={{opacity: opacity}}>
                                 
                                 {breedsImages[i].map((image, index) => {
 
                                     if (image) {
-                                        return (<>
+                                        return (
                                             <div className={`img${index+1} breeds__image`}
                                                 key={image.image_id}
                                                 style={{backgroundImage: `url('${image.image_url}')`}}
                                             >
-                                                <div className="breeds__tiltle" key={image.image_name}>
+                                                <div className="breeds__tiltle">
                                                     {image.breed_id && <button className="button button__tiltle"
                                                         onClick={()=>{handleChange({value: image.breed_id})
                                                         }}
@@ -151,7 +153,7 @@ export default function Breeds() {
                                                     </button>}
                                                 </div> 
                                             </div> 
-                                        </>)
+                                        )
                                     }
                                 })}
                             </div>)
@@ -178,6 +180,5 @@ export default function Breeds() {
                 {loading && <CircleLoader speedMultiplier={1} color={"#FF868E"} size={150} className="loader"/>}
             </div>
         </div>         
-        </>
     )
 } 

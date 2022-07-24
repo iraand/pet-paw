@@ -1,11 +1,15 @@
 .navbar{
-    height:600px;
-    width:100%;
-    max-width:444px;
-    margin: 0 auto;
+    width:45%;
+    height:100vh;
     position: sticky;
-    top: 38px;
-    margin-top:38px;
+    top:0;
+    padding-top: 38px;
+}
+.navbar__items{     
+    height:600px;
+    width:100%; 
+    width:446px;   
+    margin: 0 auto;        
 }
 .logo{
     width: 116px;
@@ -47,38 +51,35 @@
     flex-direction: column;
     align-items: center;
     transition-duration:300ms;
+    margin-right: 26px;
+    will-change: transform;
 
-    &:hover .navbar__icon{
+    &:hover .nav{
         border-color: $secondaryColor;
-        transition-duration:300ms;
         border-color: white;
     }
 
-    &:hover .navbar__button,
-    &:active .navbar__button,
-    &:focus .navbar__button{
+    &:hover .navbar__button{
         background-color: $secondaryColor;
-        
-        transition-duration:300ms;
         color: $primaryColor;
     }
 
+    &.active {
+        pointer-events: none;
+    }
 
+    &.active .navbar__button{
+        background-color: $primaryColor;
+        color:white;
+    }
+    &.active .nav{
+        border-color: $secondaryColor;
+    }    
 }
-.navbar__item:not(last-of-type){
-    margin-right: 26px;
+.navbar__item:last-of-type{
+    margin-right: 0;
 }
-.vote-table{
-    background-color: #B4B7FF;
-}
-.images-search{
-    background-color: #FFD280;
-}
-.pet-breeds{
-    background-color: #97EAB9;
-    background-position: center bottom;
-}
-.navbar__icon{
+.nav{
     width: 130px;
     height: 190px;
     border: 4px solid rgba(255, 255, 255, 0.6);
@@ -105,19 +106,24 @@
 a {
     text-decoration: none;
 }
-.active {
-    pointer-events: none;
+.nav1{
+    background-color: #B4B7FF;
 }
-.active .navbar__button{
-    background-color: $primaryColor;
-    color:white;
+.nav2{
+    background-color: #FFD280;
 }
-.active .navbar__icon{
-    border-color: $secondaryColor;
+.nav3{
+    background-color: #97EAB9;
+    background-position: center bottom;
+}
+.desktop-navbar{
+    display:block;
+}
+.smartphone-navbar{
+    display:none; 
 }
 
-
-@each $bgImg in vote-table, pet-breeds, images-search {
+@each $bgImg in nav1, nav2, nav3 {
     .#{$bgImg} {
       background-image: url('../../images/#{$bgImg}.png');
       background-repeat: no-repeat;
@@ -135,32 +141,49 @@ a {
   @media screen and (max-width: 1024px) {
     .navbar{
         width:100%;
-        max-width:444px;
         margin: 10% auto;
         position: static;
-
+        height:100%;
     }
   }
-  
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 930px) {
+    .desktop-navbar{
+        display:none;
+    }
+    .smartphone-navbar{
+        display:block; 
+    }
+  }     
+  @media screen and (max-width: 720px) {
     .navbar{
-        width:350px;
-        margin: 10% auto;
+        padding: 20px;
+    }
+    .navbar__items{     
+        height:100%;
+        width:100%; 
+        margin-top:0;  
+    }
+
+    .navbar__conteiner{
+        height:100%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: left;
     }
     .navbar__item{
-        width: 110px;
-        height: 208px;  
+        width: 100%;
+        height: 60px; 
     } 
-    .navbar__icon{
-        width: 102px;
-        height: 149px;
-        background-size: 90%;
+    .nav{
+        display:none;
+        flex-direction: row;
     }
     .navbar__button{
-        width: 110px;
-        height: 30px;   
+        width: 100%;
+        height: 40px;
+        flex-direction: row;   
     } 
-    .navbar__item:not(last-of-type){
-        margin-right: 10px;
+    .navbar__item{
+        margin-right: 0;
     }          
   }

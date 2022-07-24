@@ -32,10 +32,12 @@ form{
     .smile-like{
         width:30px;
         height:30px;
+        flex-grow: 1;
     }
     .smile-love{
         width:30px;
         height:26px;
+        flex-grow: 1;
     }
 
     &:hover{
@@ -43,3 +45,39 @@ form{
         fill:white;
     }
 }
+.menu-burger{
+    display:none;
+
+}
+.burger{
+    width:30px;
+    height:18px;
+}
+.active {
+    pointer-events: none;
+}
+.active .smile-button{
+    background-color: $primaryColor;
+    fill:white;
+}
+
+@media screen and (max-width: 720px) {
+    .header{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start
+    }
+    form{
+        width: 100%;
+        margin-top: 10px;
+    } 
+    .menu-burger{
+        display:flex;
+        align-self: flex-start;
+        flex-grow: 2;
+    } 
+    .smiles{
+        width:100%;
+        min-width:100%;
+    }   
+  }
